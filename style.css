@@ -1,0 +1,305 @@
+/* || FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* || RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* || VARIABLES */
+:root {
+    --GREEN-LIGHTER: hsl(148, 38%, 91%);
+    --GREEN-MEDIUM: hsl(169, 82%, 27%);
+    --GREEN-DARKER: hsl(169, 65%, 15%);
+    --RED: hsl(0, 66%, 54%);
+    --WHITE: hsl(0, 0%, 100%);
+    --GREY-MEDIUM: hsl(186, 15%, 59%);
+    --GREY-DARKER: hsl(187, 24%, 22%);
+}
+
+/* || STYLES */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--GREEN-LIGHTER);
+    min-height: 100svh;
+}
+
+.container{
+    max-width: 40rem;
+    background-color: var(--WHITE);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+.required{
+    font-size: .8rem;
+    color: var(--GREEN-MEDIUM);
+    font-weight: 600;
+}
+
+.container .heading{
+    font-size: 1.5rem;
+    color: var(--GREY-DARKER);
+    margin-bottom: 1.25rem;
+}
+
+.contact-form .name,
+.contact-form .email,
+.contact-form .query,
+.contact-form .user-message,
+.contact-form .consent{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;;
+    flex-direction: column;
+    width: 100%;
+    color: var(--GREY-DARKER);
+    font-weight: 600;
+    font-size: .8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form .name{
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+}
+
+.name .input-control{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .35rem;
+    width: 50%;
+}
+
+.input-control #first-name,
+.input-control #last-name,
+.email #email-address,
+.radio-btn .query-control,
+.user-message .message-input {
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--GREY-MEDIUM);
+    color: var(--GREY-DARKER);
+    font-weight: 500;
+    font-size: .85rem;
+    padding: .4rem 1.25rem;
+}
+
+.input-control.fail #first-name,
+.input-control.fail #last-name,
+.email.fail #email-address,
+.user-message.fail .message-input {
+    border-color: var(--RED);
+}
+
+.input-control #first-name:hover,
+.input-control #first-name:focus-within,
+.input-control #last-name:hover,
+.input-control #last-name:focus-within{
+    border-color: var(--GREEN-MEDIUM);
+    cursor: pointer;
+}
+
+.radio-btn .query-control:hover {
+    cursor: pointer;
+}
+
+.email #email-address {
+    margin-top:.35rem;
+}
+
+.query .radio-btn {
+    display: flex;
+    margin-top: .75rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.radio-btn .query-control {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+    transition: 0.3s ease;
+}
+
+.radio-btn .query-control.selected {
+    background-color: var(--GREEN-LIGHTER);
+    border-color: var(--GREEN-MEDIUM);
+}
+
+.query-control.selected .query-radio{
+    display:none;
+}
+
+.radio-icon{
+    display: none;
+}
+
+.query-control.selected .radio-icon{
+    display: block;
+    width: 13px;
+    height: 13px;
+}
+
+.radio-btn .query-control .query-value {
+    white-space: nowrap;
+    transform: translateY(-2px);
+}
+
+.user-message .message-input {
+    resize: none;
+    margin-top: .75rem;
+    height: 5rem;
+    scrollbar-width: thin;
+}
+
+.consent .consent-control {
+    display: flex;
+    gap: .75rem;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.consent .consent-control:hover, 
+.consent .consent-control label:hover, 
+.consent .consent-control #permission:hover {
+    cursor: pointer;
+}
+
+.consent .consent-control .permission-text{
+    white-space: nowrap;
+    transform: translateY(-2px);
+}
+
+.checked-box{
+    width: 13px;
+    height: 13px;
+}
+
+.checked-box_container {
+    display: none
+}
+
+#permission:checked {
+    display: none
+}
+
+#permission:checked ~ .checked-box_container {
+    display: block
+}
+
+.submit-btn{
+    text-align: center;
+    width: 100%;
+    color: var(--WHITE);
+    background-color: var(--GREEN-MEDIUM);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: .5rem 1.25rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover{
+    background-color: var(--GREEN-DARKER);
+}
+
+.error {
+    color: var(--RED);
+    display: none;
+    font-size: .7rem;
+    font-weight: 500;
+}
+
+.name .input-control.fail .error,
+.email.fail .error,
+.user-message.fail .error,
+.query.fail .error,
+.consent.fail .error {
+    display: block;
+}
+
+.success-prompt{
+    display: block;
+    position: fixed;
+    top: 1rem;
+    background-color: var(--GREY-DARKER);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--WHITE);
+    cursor: pointer;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.success-prompt.successful {
+    height: 4.6rem;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.success-prompt .success-heading{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+    font-size: .7rem;
+    font-weight: 600;
+}
+
+.success-heading .success-header{
+    transform: translateY(-2px);
+}
+
+.success-heading .success-check{
+    width: 14px;
+    height: 14px;
+}
+
+.success-prompt .success-note {
+    margin-top: .5rem;
+    font-size: .7rem;
+    font-weight: 400;
+    color: var(--GREY-MEDIUM);
+}
+
+/* || MEDIA QUERIES */
+@media screen and (max-width: 425px) {
+    .contact-form .name,
+    .query .radio-btn {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .name .input-control{
+        width: 100%;
+    }
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

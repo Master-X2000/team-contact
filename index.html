@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+  
+  <title>Frontend Mentor | Contact form</title>
+</head>
+<body>
+
+  <main class="container">
+    
+    <h1 class="heading">
+      Contact Us
+    </h1>
+
+    <form action="#" class="contact-form">
+      <section class="name">
+        <div class="input-control">
+          <label for="first-name">
+            First Name <span class="required">*</span>
+          </label>
+          <input type="text" id="first-name">
+          <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+          <label for="last-name">
+            Last Name <span class="required">*</span>
+          </label>
+          <input type="text" id="last-name">
+          <div class="error"></div>
+        </div>
+      </section>
+
+      <section class="email">
+        <label for="email-address">
+          Email Address <span class="required">*</span>
+        </label>
+        <input type="text" id="email-address">
+        <div class="error"></div>
+      </section>
+  
+      <section class="query">
+        <label class="query-header">
+          Query Type <span class="required">*</span>
+        </label>
+        <div class="radio-btn">
+          <div class="query-control">
+            <input type="radio" name="query" class="query-radio" value="General Enquiry">
+            <img src="images/icon-radio-selected.svg" alt="" class="radio-icon">
+            <p class="query-value" >
+              General Enquiry
+            </p>
+          </div>
+          
+          <div class="query-control">
+            <input type="radio" name="query" class="query-radio" value="Support Request">
+            <img src="images/icon-radio-selected.svg" alt="" class="radio-icon">
+            <p class="query-value">
+              Support Request
+            </p>
+          </div>
+        </div>
+        <div class="error"></div>
+      </section>
+
+      <section class="user-message">
+        <label class="message">
+          Message <span class="required">*</span>
+        </label>
+        <textarea class="message-input"></textarea>
+        <div class="error"></div>
+      </section>
+  
+      <section class="consent">
+        <div class="consent-control">
+          <input type="checkbox" id="permission">
+          <label for="permission" class="checked-box_container">
+            <img src="images/icon-checkbox-check.svg" alt="" class="checked-box">
+          </label>
+          <label for="permission" class="permission-text">
+            I consent to being contacted by the team
+            <span class="required">*</span>
+          </label>
+        </div>
+        <div class="error"></div>
+      </section>
+
+      <button type="submit" class="submit-btn">
+        Submit
+      </button>
+    </form>
+
+    <section class="success-prompt">
+      <div class="success-heading">
+        <img src="images/icon-success-check.svg" alt="" class="success-check">
+        <h3 class="success-header">Message Sent!</h3>
+      </div>
+      <p class="success-note">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+  </section>
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Odezime Excel Odezime</a>.
+  </div>
+</body>
+</html>
